@@ -1,0 +1,121 @@
+.profile {
+  min-height: 100vh;
+  background: url(/background.png) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-container {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.profile-pic {
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  margin: 20px 50px 20px 20px;/* Top, Right, Bottom, Left (reduce left margin) */
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translateX(-10px); /* Pushes it 10px to the left */
+}
+
+
+.profile form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  flex: 1;
+}
+
+.profile form h3 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #333;
+}
+
+.profile label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #555;
+  font-size: 14px;
+}
+
+.profile label img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  transition: transform 0.2s;
+}
+
+.profile label:hover img {
+  transform: scale(1.05);
+  border-color: #077eff;
+}
+
+.profile input[type='text'],
+.profile textarea {
+  width: 75%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.profile input[type='text']:focus,
+.profile textarea:focus {
+  border-color: #28c76f;
+}
+
+.profile textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.profile button {
+    width: 75%;
+  padding: 12px 20px;
+  background-color: #077eff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.profile button:hover {
+  background-color: #077eff;
+}
+
+.profile button {
+  transition: all 0.2s ease;
+}
+
+/* Hover effect - slight pop and background change */
+.profile button:hover {
+  background-color: rgb(70, 78, 174);
+  transform: scale(1.05); /* Slightly enlarge the button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Background pop effect */
+}
+
+/* Click effect - quick push down to simulate click */
+.profile button:active {
+  transform: scale(0.97); /* Slightly shrink the button */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Less shadow on press */
+}

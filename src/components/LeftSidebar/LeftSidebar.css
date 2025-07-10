@@ -1,0 +1,268 @@
+/* Global box-sizing reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container for the left sidebar */
+.ls {
+  background: #001030;
+  color: white;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+/* Top section containing logo and menu */
+.ls-top {
+  width: 100%;
+  padding: 20px;
+}
+
+.ls-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.ls-nav .logo {
+  max-width: 100px;
+  margin-right: 8px;
+}
+
+.ls-nav .menu {
+  display: flex;
+}
+
+.ls-nav .menu img {
+  max-height: 20px;
+  opacity: 0.6;
+  cursor: pointer;
+  padding: 0px;
+}
+
+/* Search bar section */
+.ls-search {
+  display: flex;
+  align-items: center;
+  background-color: #002670;
+  padding: 7px 7px;
+  border-radius: 8px;
+  gap: 10px;
+  margin-left: 9px;
+  margin-right: 9px;
+}
+
+.ls-search img {
+  width: 25px;
+  height: 25px;
+  margin-right: 4px;
+  opacity: 0.8;
+  background-color: #007bff;
+  border-radius: 50%;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+
+.ls-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 11px;
+}
+
+.ls-search input::placeholder{
+    color:#c8c8c8;
+}
+/* Friends list container */
+.ls-list {
+  margin-top: 10px;
+  padding: 0px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Scrollbar styling */
+.ls-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ls-list::-webkit-scrollbar-track {
+  background: #000a1a;
+}
+
+.ls-list::-webkit-scrollbar-thumb {
+  background: #0055aa;
+  border-radius: 4px;
+}
+
+/* Individual friend item */
+.friends {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border-bottom: 1px solid #123;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.friends img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.friends div p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.friends div span {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* Hover effects */
+.friends:hover {
+  background-color: #077eef;
+  border-radius: 5px;
+}
+
+.friends:hover span {
+  color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .ls {
+    padding: 15px 10px;
+  }
+
+  .ls-nav .logo {
+    max-width: 100px;
+  }
+
+  .ls-search input {
+    font-size: 13px;
+  }
+
+  .friends img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .friends div p {
+    font-size: 14px;
+  }
+
+  .friends div span {
+    font-size: 12px;
+  }
+}
+
+
+.ls-nav .menu{
+  position: relative;
+  padding: 10px 0;
+}
+
+.menu .sub-menu{
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 130px;
+  padding: 20px;
+  border-radius: 5% ;
+  background-color: white;
+  color: black;
+  display: none;
+}
+
+.sub-menu hr{
+  border: none;
+  height: 1px;
+  background: #a4a4a4;
+  margin: 8px 0px;
+}
+
+.sub-menu p {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu:hover .sub-menu{
+  display: block;
+}
+
+.sub-menu p:hover {
+  background-color: rgba(7, 126, 239, 0.2); /* 0.2 = 20% opacity */
+  color: black;
+  border-radius: 8%;
+  padding:3px;
+}
+
+
+.last-seen {
+  font-size: 11px !important;
+  color: #888;
+  display: block;
+  margin-top: 2px;
+}
+.avatar-status {
+  position: relative;
+  display: inline-block;
+}
+
+.green-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  background-color: #28c76f;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.friends.unread {
+  background-color: #48648f;
+  border-left: 4px solid #007bff;
+  font-weight: 600;
+}
+.friends.unread span {
+  font-weight: 600;
+  color: #000;
+}
+
+/* phones ≤480 px */
+@media (max-width: 480px) {
+  .ls            { width: 80vw; }  /* optional off‑canvas */
+  .ls-search img { width: 20px; height: 20px; }
+  .ls-search input { font-size: 11px; }
+  .friends img   { width: 32px; height: 32px; }
+  .friends div p { font-size: 13px; }
+  .friends div span { font-size: 11px; }
+}
+
+/* very short heights */
+@media (max-height: 550px) {
+  .ls { height: 100vh; }   /* let it scroll instead of cut off */
+}
+
+@media (max-width:900px){
+  .ls {
+    display: none;
+  }
+}
+
+/* Hides LeftSidebar completely */

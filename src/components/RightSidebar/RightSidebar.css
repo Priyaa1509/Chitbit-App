@@ -1,0 +1,281 @@
+.rs {
+  width: 100%;
+  height: 100%;
+  background-color: #001030;
+  border-left: 1px solid #1a1a2e;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Profile Section */
+.rs-top {
+  align-self: stretch;
+}
+
+.rs-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding-bottom: 20px;
+}
+
+.rs-profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.rs-profile h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.rs-profile p {
+  font-size: 12px;
+  color: #cccccc;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 220px;
+}
+
+/* Online Dot */
+.dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+.media-separator {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgb(186, 183, 183);
+  
+}
+
+/* Media Section */
+.rs-media {
+  margin: auto 0; /* This centers it vertically */
+  text-align: center;
+
+}
+
+.rs-media p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.rs-media div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: 5px;
+  max-width: 240px;
+}
+
+/* Media images */
+.rs-media div img {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 2px solid #1a1a2e;
+}
+
+.rs-media div img:hover {
+  transform: scale(1.05);
+}
+
+/* Logout Button */
+.logout-btn {
+  align-self: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 6px 16px;
+  background-color: #077eff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #0069d9;
+}
+
+/* CSS for lightbox */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.media-img {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.media-img:hover {
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 4px 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.rs-media {
+  max-height: 250px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.rs-media::-webkit-scrollbar {
+  width: 6px;
+}
+
+.rs-media::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 6px;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.media-img {
+  width: 100%;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.media-img:hover {
+  transform: scale(1.03);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.no-media {
+  font-size: 14px;
+  color: #666;
+}
+
+.rs-media p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width:900px){
+  .rs {
+    display: none;
+  }
+}

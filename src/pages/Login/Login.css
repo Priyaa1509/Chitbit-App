@@ -1,0 +1,246 @@
+.login {
+    min-height: 100vh;
+    background: url(/background.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px; /* Optional: adds space between logo and form */
+}
+
+
+.login .logo {
+    width: max(20vw, 200px);
+}
+
+.login-form {
+    background: white;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.login-form h2{
+  font-weight: 500;
+}
+
+.form-input{
+  padding: 8px 10px;
+  border : 1px solid #c9c9c9;
+  border-radius: 4px;
+  outline-color:  #077eff;
+}
+.login-form button{
+  padding: 10px;
+  background-color: #077eff;
+  color: white;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form button {
+  transition: all 0.2s ease;
+}
+
+/* Hover effect - slight pop and background change */
+.login-form button:hover {
+  background-color: rgb(62, 71, 168);
+  transform: scale(1.05); /* Slightly enlarge the button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Background pop effect */
+}
+
+/* Click effect - quick push down to simulate click */
+.login-form button:active {
+  transform: scale(0.97); /* Slightly shrink the button */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Less shadow on press */
+}
+
+.login-terms{
+  display:flex;
+  gap:10px;
+  font-size: 12px;
+  color: #808080;
+}
+.login-toggle-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-content: center;
+  align-items: center;
+}
+
+.login-toggle{
+font-size: 13px;
+color: #5c5c5c;
+}
+
+.login-toggle span{
+  font-weight: 500;
+  color: #077eff;
+  cursor: pointer;
+}
+/* Password Reset Styles */
+.reset-password-text {
+  font-size: 13px;
+  text-align: right;
+  color: #077eff;
+  cursor: pointer;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.reset-password-text:hover {
+  text-decoration: underline;
+}
+
+/* Error/validation message (already partly defined) */
+.error-message {
+  font-size: 12px;
+  color: red;
+  margin-top: -8px;
+}
+
+/* Success/Info message */
+.success-message {
+  font-size: 12px;
+  color: green;
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+/* modal backdrop */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* modal card */
+
+.modal-card {
+  --radius: 12px;
+  --shadow: 0 12px 32px rgba(0 0 0 / .25);
+
+  background: var(--modal-bg, #ffffff);
+  color: var(--modal-fg, #222);
+  padding: 2rem;
+  width: min(420px, 90%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+
+  /* subtle zoom‑in animation */
+  transform: translateY(-8px) scale(.95);
+  opacity: 0;
+  animation: modalIn .25s ease forwards;
+}
+
+@keyframes modalIn {
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.modal-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+
+
+.modal-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.modal-actions button {
+  min-width: 90px;
+  padding: .55rem 1.2rem;
+  font-size: .9rem;
+  border: 0;
+  border-radius: calc(var(--radius) - 4px);
+  cursor: pointer;
+  transition: background-color .2s, transform .15s;
+}
+
+.modal-actions button:active {
+  transform: translateY(1px);
+}
+
+/* primary */
+.modal-actions button:not(.secondary-btn) {
+  background: #017cff;
+  color: #fff;
+}
+.modal-actions button:not(.secondary-btn):hover {
+  background: #0168d7;
+}
+
+
+.secondary-btn {
+  background: #f2f2f2;
+  color: #333;
+}
+.secondary-btn:hover {
+  background: #e7e7e7;
+}
+
+.modal-actions button:focus-visible {
+  outline: 3px solid #0168d7;
+  outline-offset: 2px;
+}
+
+
+:root { --fs-base: clamp(14px, 0.9rem + 0.3vw, 18px); --space-xl: clamp(60px, 12vw, 150px); }
+
+body { font-size: var(--fs-base); }
+
+@media (max-width: 992px) {
+  .login-container { gap: var(--space-xl); }
+  .login .logo { max-width: 220px; width: 30vw; }
+  .login-form { max-width: 420px; }
+}
+
+@media (max-width: 768px) {
+  .login { flex-direction: column; padding: 32px 5vw; }
+  .login-container { flex-direction: column; gap: 48px; }
+  .login .logo { width: 40vw; max-width: 200px; }
+  .login-form { width: 100%; max-width: 380px; }
+}
+
+@media (max-width: 480px) {
+  .login-form { padding: 14px 16px; gap: 12px; border-radius: 8px; }
+  .login-form h2 { font-size: 1.4rem; }
+  .form-input { font-size: 0.9rem; padding: 7px 9px; }
+  .login-form button { font-size: 0.95rem; padding: 9px; }
+  .login-toggle, .reset-password-text { font-size: 0.8rem; }
+  .login-toggle-wrapper { gap: 2px; }
+}
+
+@media (max-width: 360px) {
+  .login-form h2 { font-size: 1.25rem; }
+  .form-input { font-size: 0.8rem; }
+  .login-form button { font-size: 0.85rem; }
+  .login .logo { width: 50vw; max-width: 150px; }
+}
+
+@media (max-height: 550px) and (min-width: 481px) {
+  .login { padding-top: 24px; }
+  .login-container { gap: 32px; }
+  .login .logo { max-width: 180px; }
+}
